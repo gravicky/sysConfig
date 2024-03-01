@@ -1,0 +1,6 @@
+[user]
+    name = Vikram-AM
+    email = vikram.am@cai-solutions.com
+
+[core]
+    sshCommand = ssh -i /Users/vicky/.ssh/github_work

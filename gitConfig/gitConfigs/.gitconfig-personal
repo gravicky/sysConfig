@@ -1,0 +1,7 @@
+[user]
+    name = gravicky
+    email = vikram0101@proton.me
+
+[core]
+    sshCommand = ssh -i /Users/vicky/.ssh/github_personal
+

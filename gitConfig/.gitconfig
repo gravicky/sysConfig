@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[includeIf "gitdir:~/personal/"]
+  path = ~/gitConfigs/.gitconfig-personal
+[includeIf "gitdir:~/work/"]
+  path = ~/gitConfigs/.gitconfig-work
+#[include] # If all repos in every folder except 'work' should be considered as personal
+#  path = ~/gitConfigs/.gitconfig-personal
+#[user]
