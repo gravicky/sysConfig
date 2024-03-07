@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer' },
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'terraformls' },
 })
 
 -- Set different settings for different languages' LSP
@@ -33,6 +33,9 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.diagnostic.config({
+      update_in_insert = true, -- Update diagnostics in insert mode
+    })
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -62,3 +65,12 @@ end
 lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
+lspconfig.terraformls.setup({
+    on_attach = on_attach,
+    settings = {
+        terraform = {
+            logFilePath = '$HOME/tf.log',
+        },
+    }
+})
+

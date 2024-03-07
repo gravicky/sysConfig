@@ -42,3 +42,11 @@ vim.keymap.set('n', '<C-m>', ':MarkdownPreviewToggle<CR>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
+-- Comment lines in visual mode
+-- vim.api.nvim_set_keymap('v', '<C-c>', ':s/^/# /<CR>', opts) -- change this so that it can autodetect language and apply comments, maybe from current line to what ever number of line there is
+
+-----------------
+-- Insert mode --
+-----------------
+
+vim.keymap.set('i', 'jk', '<ESC>',opts)

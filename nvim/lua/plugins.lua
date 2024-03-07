@@ -35,8 +35,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use { 'wbthomason/packer.nvim' }
 	use { 'ellisonleao/gruvbox.nvim' }									        -- gruvbox theme for neovim
-	use { 'neovim/nvim-lspconfig' }										        -- configure Language Server Protocol
-	use { 'williamboman/mason.nvim' }								        	-- package manager for LSP servers, DAP servers, linters, and formatters
+	use { 'neovim/nvim-lspconfig' }	                                            -- configure Language Server Protocol
+	use { 'williamboman/mason.nvim' }								        	-- package manager for LSP servers, DAP servers, linters, and formatters, if new language lsp required, check in mason registry
 	use { 'williamboman/mason-lspconfig.nvim'}							        -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim
 	use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }         -- framework for various completion sources
 	use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }					        -- extends nvim-cmp by providing a source that integrates with the LSP servers configured through nvim-lspconfig 
@@ -45,11 +45,12 @@ return require('packer').startup(function(use)
 	use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }   			            -- cmdline auto-completion
 	use { 'L3MON4D3/LuaSnip' }          								        -- code snippet engine
 	use { 'saadparwaiz1/cmp_luasnip' }                     			            -- enables autocompletion of snippets provided by LuaSnip 
-    use {'iamcco/markdown-preview.nvim'}                                        -- instant markdown-preview
-    use {"windwp/nvim-autopairs", config = [[require('config.autopairs')]] }    -- enables autocompletion of inverted commas and brackets
+    use { 'iamcco/markdown-preview.nvim'}                                       -- instant markdown-preview
+    use { 'windwp/nvim-autopairs', config = [[require('config.autopairs')]] }   -- enables autocompletion of inverted commas and brackets
     use { 'nvim-tree/nvim-web-devicons' }                                       -- addon for nvim-tree, not required
-    use {  'nvim-tree/nvim-tree.lua', config = [[require('config.nvimtree')]], after = "nvim-web-devicons" } -- adds nvim-tree file explorer
-    use { "Pocco81/auto-save.nvim", config = [[require('config.autosave')]] }   -- autosave progress
+    use { 'nvim-tree/nvim-tree.lua', config = [[require('config.nvimtree')]], after = 'nvim-web-devicons' } -- adds nvim-tree file explorer
+    use { 'Pocco81/auto-save.nvim', config = [[require('config.autosave')]] }   -- autosave progress
+    use { 'numToStr/Comment.nvim', config = [[require('config.comment')]]  }     -- plugin for faster commenting
  	-- more plugins here
   
     -- Automatically set up your configuration after cloning packer.nvim
