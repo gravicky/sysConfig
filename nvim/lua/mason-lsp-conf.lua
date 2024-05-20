@@ -8,9 +8,11 @@ require('mason').setup({
     }
 })
 
+-- Lspconfig starts here
+
 require('mason-lspconfig').setup({
-    -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'terraformls' },
+    -- a list of servers to automatically install if they're not already installed
+    ensure_installed = { 'pyright', 'gopls', 'lua_ls', 'rust_analyzer', 'terraformls' },
 })
 
 -- Set different settings for different languages' LSP
@@ -62,7 +64,7 @@ end
 -- How to add LSP for a specific language?
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
-lspconfig.pylsp.setup({
+lspconfig.pyright.setup({
 	on_attach = on_attach,
 })
 lspconfig.terraformls.setup({
@@ -73,4 +75,5 @@ lspconfig.terraformls.setup({
         },
     }
 })
+
 

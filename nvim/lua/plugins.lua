@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
 	use { 'neovim/nvim-lspconfig' }	                                            -- configure Language Server Protocol
 	use { 'williamboman/mason.nvim' }								        	-- package manager for LSP servers, DAP servers, linters, and formatters, if new language lsp required, check in mason registry
 	use { 'williamboman/mason-lspconfig.nvim'}							        -- Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim
+    use { "mfussenegger/nvim-lint", after = 'mason.nvim' }                      -- Asynchronous linter plugin for Neovim
+    use { "rshkarin/mason-nvim-lint", after = 'nvim-lint', config = [[require('config.linter-conf')]] } -- Extension to close gap between mason.nvim and nvim-lint, installs linters configured in nvim-lint
 	use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }         -- framework for various completion sources
 	use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }					        -- extends nvim-cmp by providing a source that integrates with the LSP servers configured through nvim-lspconfig 
 	use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }    			            -- buffer auto-completion

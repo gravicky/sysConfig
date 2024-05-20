@@ -143,6 +143,14 @@ _G.packer_plugins = {
     path = "/Users/vicky/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
+  ["mason-nvim-lint"] = {
+    config = { "require('config.linter-conf')" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/vicky/.local/share/nvim/site/pack/packer/opt/mason-nvim-lint",
+    url = "https://github.com/rshkarin/mason-nvim-lint"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/Users/vicky/.local/share/nvim/site/pack/packer/start/mason.nvim",
@@ -155,12 +163,20 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp-path", "cmp-buffer", "cmp-cmdline" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-nvim-lsp", "cmp-path" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
     path = "/Users/vicky/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lint"] = {
+    after = { "mason-nvim-lint" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/vicky/.local/share/nvim/site/pack/packer/opt/nvim-lint",
+    url = "https://github.com/mfussenegger/nvim-lint"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -188,14 +204,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('config.nvim-cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: auto-save.nvim
-time([[Config for auto-save.nvim]], true)
-require('config.autosave')
-time([[Config for auto-save.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 require('config.comment')
@@ -204,18 +212,33 @@ time([[Config for Comment.nvim]], false)
 time([[Config for nvim-autopairs]], true)
 require('config.autopairs')
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('config.nvim-cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: auto-save.nvim
+time([[Config for auto-save.nvim]], true)
+require('config.autosave')
+time([[Config for auto-save.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-path ]]
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-nvim-lsp ]]
-vim.cmd [[ packadd cmp-buffer ]]
 vim.cmd [[ packadd nvim-web-devicons ]]
 vim.cmd [[ packadd nvim-tree.lua ]]
 
 -- Config for: nvim-tree.lua
 require('config.nvimtree')
 
+vim.cmd [[ packadd mason.nvim ]]
+vim.cmd [[ packadd nvim-lint ]]
+vim.cmd [[ packadd mason-nvim-lint ]]
+
+-- Config for: mason-nvim-lint
+require('config.linter-conf')
+
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-nvim-lsp ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
