@@ -16,12 +16,12 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
 vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- Open terminal in new tab
-vim.keymap.set('n', '<C-t>', ':tabnew | startinsert | term<CR>', opts)
+-- vim.keymap.set('n', '<C-t>', ':tabnew | startinsert | term<CR>', opts)
 -- Open terminal in split window
 vim.keymap.set('n', '<C-S-T>', ':vsplit | startinsert | term<CR>', opts)
 
 -- Nvim keymaps
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts) -- <CR> tells it to press enter after command
+-- vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', opts) -- <CR> tells it to press enter after command
 
 -- Markdown Preview
 vim.keymap.set('n', '<C-m>', ':MarkdownPreviewToggle<CR>', opts)
@@ -50,3 +50,4 @@ vim.keymap.set('v', '>', '>gv', opts)
 -----------------
 
 vim.keymap.set('i', 'jk', '<ESC>',opts)
+

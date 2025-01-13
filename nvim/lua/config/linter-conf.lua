@@ -1,6 +1,7 @@
 -- nvim-lint config
 require('lint').linters_by_ft = {
-   python= {'flake8',}
+   python= {'flake8',},
+   Go= {'golangcilint'},
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -14,5 +15,5 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 -- mason-nvim-lint config
 require ('mason-nvim-lint').setup({
-    ensure_installed = {'flake8'},
+    ensure_installed = {'flake8', 'golangci-lint'}
 })

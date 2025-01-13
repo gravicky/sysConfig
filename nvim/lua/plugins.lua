@@ -49,10 +49,11 @@ return require('packer').startup(function(use)
 	use { 'saadparwaiz1/cmp_luasnip' }                     			            -- enables autocompletion of snippets provided by LuaSnip 
     use { 'iamcco/markdown-preview.nvim'}                                       -- instant markdown-preview
     use { 'windwp/nvim-autopairs', config = [[require('config.autopairs')]] }   -- enables autocompletion of inverted commas and brackets
-    use { 'nvim-tree/nvim-web-devicons' }                                       -- addon for nvim-tree, not required
-    use { 'nvim-tree/nvim-tree.lua', config = [[require('config.nvimtree')]], after = 'nvim-web-devicons' } -- adds nvim-tree file explorer
-    use { 'Pocco81/auto-save.nvim', config = [[require('config.autosave')]] }   -- autosave progress
+--    use { 'nvim-tree/nvim-web-devicons' }                                       -- addon for nvim-tree, not required
+--    use { 'nvim-tree/nvim-tree.lua', config = [[require('config.nvimtree')]], after = 'nvim-web-devicons' } -- adds nvim-tree file explorer
+--    use { 'Pocco81/auto-save.nvim', config = [[require('config.autosave')]] }   -- autosave progress
     use { 'numToStr/Comment.nvim', config = [[require('config.comment')]]  }     -- plugin for faster commenting
+    use { 'akinsho/toggleterm.nvim', config = [[require('config.toggleterm')]] } -- better terminal, to be used with lazygit
  	-- more plugins here
   
     -- Automatically set up your configuration after cloning packer.nvim
