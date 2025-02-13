@@ -1,0 +1,17 @@
+if vim.o.ft == 'go' then
+  vim.cmd('ab  Gb GoBuild')
+  vim.cmd('cab Gt GoTest')
+  vim.cmd('cab Gn GoGenerate')
+  vim.cmd('cab Gd GoDebug')
+  vim.cmd('cab Dt GoDebug -t')
+  vim.cmd('cab Ds GoDebug -s')
+  vim.cmd('cab Ts GoTestSum')
+  vim.cmd('cab Tc GoCoverage')
+  vim.cmd('cab Sc GoTestSubCase')
+  vim.cmd('cab Tf GoTestFunc')
+  vim.cmd('cab At GoAddTest')
+  -- vim.cmd('ab gg GoGet')
+end
+vim.cmd('cab sudo w !sudo tee %')
+vim.cmd('cab DO DiffviewOpen')
+vim.cmd('cab DC DiffviewClose')
