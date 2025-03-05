@@ -45,6 +45,5 @@ M.setup = function()
     filetypes = { 'markdown' },
   })
 
-  -- pyright setup, using lspconfig
 end
 return M

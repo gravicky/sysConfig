@@ -189,6 +189,19 @@ function config.navigator()
           -- require("aerial").on_attach(client, bufnr, opts)
         end,
       },
+      pyright = {
+        filetypes = { 'python' },
+        -- Uncomment and modify if you need specific pyright settings
+        -- settings = {
+        --   python = {
+        --     analysis = {
+        --       autoSearchPaths = true,
+        --       useLibraryCodeForTypes = true,
+        --       diagnosticMode = "workspace"
+        --     }
+        --   }
+        -- }
+      },
       flow = { autostart = false },
 
       -- sqlls = {},
@@ -211,6 +224,7 @@ function config.navigator()
         'svelte',
         'cssls',
         'typos_lsp',
+        'pyright',
       }, -- , 'marksman' },
     },
   }
@@ -263,6 +277,7 @@ function config.navigator()
   -- require"navigator".setup(nav_cfg)
   require('navigator').setup(nav_cfg)
 end
+
 function config.luapad()
   require('luapad').setup({
     count_limit = 150000,

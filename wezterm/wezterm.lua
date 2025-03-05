@@ -67,7 +67,7 @@ config.keys = {
     action = wezterm.action.SwitchToWorkspace {
       name = 'monitoring',
       spawn = {
-        args = { '/opt/homebrew/bin/glances' },
+        args = { '/opt/homebrew/bin/glances' }, -- specify path exactly, just glances does not work here
       },
     },
   },

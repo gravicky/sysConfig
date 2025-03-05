@@ -152,6 +152,15 @@ return function(lang)
   })
 
   lang({
+    'microsoft/pyright',
+    ft = { 'python' },
+    event = 'BufReadPre',
+    config = function()
+      -- Any pyright-specific configuration you might want
+    end
+  })
+
+  lang({
     'ray-x/go.nvim',
     dev = dev,
     lazy = true,
